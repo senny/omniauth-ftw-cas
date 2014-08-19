@@ -1,6 +1,6 @@
-module Omniauth
+module OmniAuth
   module Ftw
-    module Cas
+    module CAS
       VERSION = "0.0.1"
     end
   end

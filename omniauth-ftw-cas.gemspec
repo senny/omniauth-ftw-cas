@@ -5,7 +5,7 @@ require 'omniauth/ftw/cas/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-ftw-cas"
-  spec.version       = Omniauth::Ftw::Cas::VERSION
+  spec.version       = OmniAuth::Ftw::CAS::VERSION
   spec.authors       = ["Yves Senn"]
   spec.email         = ["yves.senn@gmail.com"]
   spec.summary       = %q{OmniAuth strategy to authenticate against our internal CAS.}

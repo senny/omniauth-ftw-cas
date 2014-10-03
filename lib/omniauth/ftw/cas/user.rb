@@ -2,12 +2,24 @@ module OmniAuth
   module Ftw
     module CAS
       class User
+        def self.from_raw_data(raw_data)
+          new("extra" => raw_data, "info" => raw_data)
+        end
+
         def initialize(auth_hash)
           @auth_hash = auth_hash
         end
 
         def name
-          "%s %s" % [extra["firstname"], extra["lastname"]]
+          "%s %s" % [first_name, last_name]
+        end
+
+        def first_name
+          extra["firstname"]
+        end
+
+        def last_name
+          extra["lastname"]
         end
 
         def email

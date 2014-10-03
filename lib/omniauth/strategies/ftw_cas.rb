@@ -10,6 +10,18 @@ module OmniAuth
         options[:host] = "auth.4teamwork.ch"
         super
       end
+
+      info do
+        user = Ftw::CAS::User.from_raw_data raw_info
+        data = {
+          name: user.name,
+          email: user.email,
+          first_name: user.first_name,
+          last_name: user.last_name,
+          nickname: user.github_username,
+        }
+        prune!(data)
+      end
     end
   end
 end

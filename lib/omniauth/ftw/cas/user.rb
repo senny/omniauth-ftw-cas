@@ -10,6 +10,10 @@ module OmniAuth
           @auth_hash = auth_hash
         end
 
+        def uid
+          extra["uid"]
+        end
+
         def name
           "%s %s" % [first_name, last_name]
         end

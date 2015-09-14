@@ -3,6 +3,11 @@ require_relative "../test_helper"
 class UserTest < OmniAuth::Ftw::TestCase
   User = OmniAuth::Ftw::CAS::User
 
+  def test_extract_uid_from_extra
+    user = User.new({"extra" => {"uid" => "pascal.habegger"}})
+    assert_equal "pascal.habegger", user.uid
+  end
+
   def test_4teamwork_user_has_application_access
     user = User.new({"extra" => {"organization" => "4teamwork AG"}})
     assert user.application_access?
